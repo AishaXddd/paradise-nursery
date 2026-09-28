@@ -1,0 +1,6 @@
+import React,{useState} from "react"; import {useSelector} from "react-redux"; import ProductList from "./ProductList"; import CartItem from "./CartItem"; import AboutUs from "./AboutUs"; import "./App.css";
+export default function App(){const [view,setView]=useState("landing");const cart=useSelector(s=>s.cart.items);const totalItems=cart.reduce((n,x)=>n+x.quantity,0);return <div className="app">
+{view==="landing"&&<main className="landing-page"><div className="landing-overlay"/><div className="landing-content"><p className="eyebrow">WELCOME TO</p><h1>Paradise Nursery</h1><p className="tagline">Where Green Meets Serenity</p><p className="intro">Discover beautiful plants that make your home feel fresh, peaceful and alive.</p><button className="primary-button" onClick={()=>setView("products")}>Get Started</button></div><AboutUs/></main>}
+{view==="products"&&<ProductList onHomeClick={()=>setView("landing")} onCartClick={()=>setView("cart")} totalItems={totalItems}/>}
+{view==="cart"&&<CartItem onContinueShopping={()=>setView("products")} onHomeClick={()=>setView("landing")}/>}
+</div>}

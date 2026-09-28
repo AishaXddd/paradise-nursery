@@ -1,0 +1,2 @@
+import React from "react";
+export default function AboutUs(){return <section className="about-section"><div><h2>About Paradise Nursery</h2><p>Paradise Nursery is an online plant shop created for people who want to bring more greenery and calm into their homes.</p><p>We offer carefully selected indoor plants, aromatic plants and medicinal plants with simple care information for every customer.</p></div><div className="about-points"><span>🌿 Healthy Plants</span><span>🏡 Home Friendly</span><span>🚚 Easy Shopping</span></div></section>}
